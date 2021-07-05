@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="face-api.js"></script>
+  <script src="js/commons.js"></script>
+  <script src="js/faceDetectionControls.js"></script>
+  <script src="js/imageSelectionControls.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sideBar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <!-- <div id="navbar"></div> -->
+  <!-- <div class="progress" id="loader">
+    <div class="indeterminate"></div>
+  </div> -->
+
+  <!-- Loader -->
+ <!-- <div class="preloader-background"  id="loader"> 
+  <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+  
+        <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+  
+        <div class="spinner-layer spinner-yellow">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+  
+        <div class="spinner-layer spinner-green">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    <p class="blinking" ></p>
+  </div>  -->
+  <!-- Loader End --> 
+  <!-- Row Starts -->
+  <div class="row"  >
+    <nav style="background-color: #282A35;z-index: 12;position: fixed;"  >
+
+      <div class="nav-wrapper" >
+        
+        <ul id="nav-mobile" class="center hide-on-med-and-down navbutton"  >
+          <li ><a href="sass.html">Home</a></li>
+          <li ><a href="sass.html">Face Filters</a></li>
+          <li><a href="badges.html">Webcam</a></li>
+          <li><a href="collapsible.html">BBT</a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="right button-collapse "><img src="menu_icon.png" width="60px" /></a>
+      </div>
+    </nav>
+    <!-- ul col starts -->
+    <div class="col m4 s1" >
+    <ul id="slide-out" class="side-nav fixed main-side;" style="background-color: white;border-right: 0.5px solid #a7adb0;border-radius: 5px;">
+      <li class="user-li"><div class="user-view">
+        <div class="background">
+        </div>
+      <li class="lone">
+        <a href="faceMenu.html"><i class="fas fa-home my-icon" ></i><span style="margin-left: 50px;">Home</span></a></li>
+        <div class="divider"></div>
+      </li>
+      <li class="lone subheader center-align">Menu</li>
+      
+      <li class="dropchange">
+        <ul class="collapsible" >
+          <li>
+            <div class="collapsible-header head">
+             <p ><i class="fas fa-id-card my-icon"></i><span class="sidebar-subheading">Face Filters</span><i class="fa fa-angle-right changed" ></i></p>
+            </div>
+            <div class="collapsible-body drop-body">
+              <ul class="drop-body"  >              
+                <li><a class="waves-effect dropdownMargin" href="faceDetection.html"><span >Face Detection</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="faceLandmarkDetection.html"><span >Face Landmark Detection</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="faceExpressionRecognition.html"><span>Face Expression Recognition</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="faceRecognition.html"><span >Face Recognition</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="faceExtraction.html"><span>Face Extraction</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="videoFaceTracking.html"><span >Video Face Tracking</span></a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="dropchange">
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header head">
+              <p ><i class="fas fa-shopping-basket my-icon"></i><span class="sidebar-subheading">BBT filters</span> <i class="fa fa-angle-right changed" ></i></p>
+            </div>
+            <div class="collapsible-body">
+              <ul>
+                <li><a class="waves-effect dropdownMargin" href="bbtFaceMatching.html"><span>BBT Face Similarity</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="bbtFaceMatching.html"><span>BBT Face Matching</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="bbtFaceRecognition.html"><span>BBT Face Recognition</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="bbtFaceLandmarkDetection.html"><span>Batch Face Landmark Detection</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="batchFaceRecognition.html"><span>Batch Face Recognition</span></a></li>
+  
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="dropchange">
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header head">
+              <p ><i class="fas fa-briefcase my-icon"></i><span class="sidebar-subheading">Webcam filters  </span><i class="fa fa-angle-right changed"></i></p>
+            </div>
+            <div class="collapsible-body">
+              <ul>
+                <li><a class="waves-effect dropdownMargin" href="webcamFaceDetection.html"><span >Webcam Face Detection</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="webcamFaceLandmarkDetection.html"><span>Webcam Face Landmark Detection</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="webcamFaceExpressionRecognition.html"><span>Webcam Face Expression Recognition</span></a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      
+      </ul> 
+    </div>
+    <!-- ul col ends -->
+    <div class="col m6 s10 " style="margin-top:80px">
+      <div class="card "   style=" padding: 8px; border-radius: 20px;" >
+        <h5 class="center-content blue-text card-heading " >Face Extraction</h5>
+      </div>
+      <div class="card "   style=" padding: 20px; border-radius: 5px;box-shadow: 0 0 5px rgb(0 0 0 / 35%);" >  
+          <img id="inputImg" class="imgresponsive" src="" style="border-radius: 10px;"  />
+          <canvas id="overlay" />
+      </div>
+    <div id="facesContainer"></div>
+    
+    <div class="card "    style=" padding: 20px; border-radius: 5px;">
+      <div class="row">
+        <!-- face_detector_selection_control -->
+        <div id="face_detector_selection_control" class="col m12 input-field">
+          <select id="selectFaceDetector">
+            <option value="ssd_mobilenetv1">SSD Mobilenet V1</option>
+            <option value="tiny_face_detector">Tiny Face Detector</option>
+          </select>
+          <label>Select Face Detector</label>
+        </div>
+        <!-- face_detector_selection_control -->
+
+        <!-- image_selection_control -->
+        <div class="row" >
+          <div class="col m12 s12">
+          <!-- image_selection_control -->
+              <label>Select Image</label>
+              <div id="selectList"></div>
+          </div>         
+         </div>
+
+        <div class="row" style="margin-top: -30px;">
+          <div class="col m6 s12">
+            <div >
+              <label for="imgUrlInput">Get image from URL:</label>
+              <input id="imgUrlInput" type="text" class="bold">
+            </div>
+          </div>
+          <div class="col m6 s12 btn-margin" > 
+            <button
+              class="waves-effect waves-light btn  blue darken-1"
+              onclick="loadImageFromUrl()"
+            >
+              Ok
+            </button>
+            <label class="btn blue darken-1">
+              <span for="browse">Choose File</span>
+            <input id="queryImgUploadInput" type="file" style="width: 200px;display: none;" class="waves-effect btn bold" onchange="loadImageFromUpload()" accept=".jpg, .jpeg, .png">
+            </label>
+            <!-- image_selection_control -->
+          </div>
+       </div>
+
+      <!-- ssd_mobilenetv1_controls -->
+      <span id="ssd_mobilenetv1_controls">
+        <div class="row ">
+          <div class="col m12">
+            <label for="minConfidence">Min Confidence:</label>
+            <input disabled value="0.5" id="minConfidence" type="text" class="bold">
+          </div>
+          <div class="col m12">
+              <button
+                class="waves-effect waves-light btn blue darken-1"
+                onclick="onDecreaseMinConfidence()"
+              >
+                <i class="material-icons left">-</i>
+              </button>
+              <button
+                class="waves-effect waves-light btn blue darken-1"
+                onclick="onIncreaseMinConfidence()"
+              >
+                <i class="material-icons left">+</i>
+              </button>
+          </div>
+        </div>
+      </span>
+      <!-- ssd_mobilenetv1_controls -->
+
+      <!-- tiny_face_detector_controls -->
+      <span id="tiny_face_detector_controls">
+        <div class="row ">
+          <div class="col m12 input-field" style="margin-right: 20px;">
+            <select id="inputSize">
+              <option value="" disabled selected>Input Size:</option>
+              <option value="160">160 x 160</option>
+              <option value="224">224 x 224</option>
+              <option value="320">320 x 320</option>
+              <option value="416">416 x 416</option>
+              <option value="512">512 x 512</option>
+              <option value="608">608 x 608</option>
+            </select>
+            <label>Input Size</label>
+          </div>
+          <div class="col m12">
+            <label for="scoreThreshold">Score Threshold:</label>
+            <input disabled value="0.5" id="scoreThreshold" type="text" class="bold">
+          </div>
+          <button
+            class="waves-effect waves-light btn blue darken-1"
+            onclick="onDecreaseScoreThreshold()"
+          >
+            <i class="material-icons left">-</i>
+          </button>
+          <button
+            class="waves-effect waves-light btn blue darken-1"
+            onclick="onIncreaseScoreThreshold()"
+          >
+            <i class="material-icons left">+</i>
+          </button>
+        </div>
+      </span>
+      <!-- tiny_face_detector_controls -->
+
+    </div>
+
+    </div>
+
+    </div>
+    </body>
+
+  
+
+  <script>
+    // menu collpase button code
+    $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+      });
+      // end here
+
+    async function updateResults() {
+      if (!isFaceDetectionModelLoaded()) {
+        return
+      }
+
+      const inputImgEl = $('#inputImg').get(0)
+      const options = getFaceDetectorOptions()
+
+      const detections = await faceapi.detectAllFaces(inputImgEl, options)
+      const faceImages = await faceapi.extractFaces(inputImgEl, detections)
+
+      displayExtractedFaces(faceImages)
+    }
+
+    function displayExtractedFaces(faceImages) {
+      const canvas = $('#overlay').get(0)
+      faceapi.matchDimensions(canvas, $('#inputImg').get(0))
+
+      $('#facesContainer').empty()
+      faceImages.forEach(canvas => $('#facesContainer').append(canvas))
+    }
+
+    async function run() {
+      // load face detection model
+      await changeFaceDetector(selectedFaceDetector)
+
+      // start processing image
+      updateResults()
+    }
+
+    $(document).ready(function() {
+      // renderNavBar('#navbar', 'face_extraction')
+      initImageSelectionControls()
+      initFaceDetectionControls()
+      run()
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js -L -e js,html"
+  },
+  "author": "Me",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "request": "^2.88.2"
+  }
+}
