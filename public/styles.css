@@ -1,14 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 *{
   margin: 0;
   padding:0;
 }
-h1,h2,h3,h4,h5,h6{
-  font-family: "Montserrat",sans-serif;
-}
+
 li,a,button{
-  font-family: "Montserrat",sans-serif;
   font-weight: 500;
   /* font-size: 16px; */
   text-decoration: none;
@@ -25,7 +21,7 @@ li,a,button{
   
 }
 body{
-  background-color: #F1F4F9;
+  background-color:#E8EAED;
   /* background-color: black; */
   /* font-family:"Segoe UI","Roboto","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
 }
