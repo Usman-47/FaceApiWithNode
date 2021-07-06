@@ -20,7 +20,7 @@
   </div> -->
 
   <!-- Loader -->
- <!-- <div class="preloader-background"  id="loader"> 
+ <div class="preloader-background"  id="loader"> 
   <div class="preloader-wrapper big active">
         <div class="spinner-layer spinner-blue">
           <div class="circle-clipper left">
@@ -63,27 +63,27 @@
         </div>
       </div>
     <p class="blinking" ></p>
-  </div>  -->
+  </div> 
   <!-- Loader End --> 
   <!-- Row Starts -->
-  <div class="row"  >
-    <nav style="background-color: #282A35;z-index: 12;position: fixed;"  >
+  <nav style="position: fixed;z-index: 13;"  >
 
-      <div class="nav-wrapper" >
+   <div class="nav-wrapper" >
         
-        <ul id="nav-mobile" class="center hide-on-med-and-down navbutton"  >
-          <li ><a href="sass.html">Home</a></li>
+    <ul id="nav-mobile" class="right hide-on-med-and-down"  >
+      <li ><a href="sass.html">Home</a></li>
           <li ><a href="sass.html">Face Filters</a></li>
           <li><a href="badges.html">Webcam</a></li>
           <li><a href="collapsible.html">BBT</a></li>
         </ul>
-        <a href="#" data-activates="slide-out" class="right button-collapse "><img src="menu_icon.png" width="60px" /></a>
+        <!-- <a href="#" data-activates="slide-out" class="right button-collapse "><img src="menu_icon.png" width="60px" /></a> -->
       </div>
     </nav>
+  <div class="row"  >
     <!-- ul col starts -->
-    <div class="col m4 s1" >
-    <ul id="slide-out" class="side-nav fixed main-side;" style="background-color: white;border-right: 0.5px solid #a7adb0;border-radius: 5px;">
-      <li class="user-li"><div class="user-view">
+    <div class="col m3 " >
+      <ul id="slide-out" class="side-nav fixed main-side;" style="background-color: white;border-right: 0.5px solid #a7adb0;z-index: 10;width:240px;">
+       <li class="user-li"><div class="user-view">
         <div class="background">
         </div>
       <li class="lone">
@@ -96,7 +96,7 @@
         <ul class="collapsible" >
           <li>
             <div class="collapsible-header head">
-             <p ><i class="fas fa-id-card my-icon"></i><span class="sidebar-subheading">Face Filters</span><i class="fa fa-angle-right changed" ></i></p>
+              <p ><i class="fas fa-id-card my-icon"></i><span class="sidebar-subheading">Face Filters</span></p>
             </div>
             <div class="collapsible-body drop-body">
               <ul class="drop-body"  >              
@@ -115,7 +115,7 @@
         <ul class="collapsible">
           <li>
             <div class="collapsible-header head">
-              <p ><i class="fas fa-shopping-basket my-icon"></i><span class="sidebar-subheading">BBT filters</span> <i class="fa fa-angle-right changed" ></i></p>
+              <p ><i class="fas fa-shopping-basket my-icon"></i><span class="sidebar-subheading">BBT filters</span></p>
             </div>
             <div class="collapsible-body">
               <ul>
@@ -134,8 +134,8 @@
         <ul class="collapsible">
           <li>
             <div class="collapsible-header head">
-              <p ><i class="fas fa-briefcase my-icon"></i><span class="sidebar-subheading">Webcam filters  </span><i class="fa fa-angle-right changed"></i></p>
-            </div>
+              <p ><i class="fas fa-briefcase my-icon"></i><span class="sidebar-subheading">Webcam filters  </span</p>
+              </div>
             <div class="collapsible-body">
               <ul>
                 <li><a class="waves-effect dropdownMargin" href="webcamFaceDetection.html"><span >Webcam Face Detection</span></a></li>
@@ -150,18 +150,21 @@
       </ul> 
     </div>
     <!-- ul col ends -->
-    <div class="col m6 s10 " style="margin-top:80px">
-      <div class="card "   style=" padding: 8px; border-radius: 20px;" >
-        <h5 class="center-content blue-text card-heading " >Face Extraction</h5>
-      </div>
-      <div class="card "   style=" padding: 20px; border-radius: 5px;box-shadow: 0 0 5px rgb(0 0 0 / 35%);" >  
-          <img id="inputImg" class="imgresponsive" src="" style="border-radius: 10px;"  />
-          <canvas id="overlay" />
-      </div>
-    <div id="facesContainer"></div>
-    
+    <div class="col m7 s11 " style="margin-top:80px">
+      <nav >
+        <div class="nav-wrapper" style="margin-right: 100px;">
+          <div class="col s12">
+            <a href="#!" class="breadcrumb">Face Filter ></a>
+            <a href="#!" >Face Extraction </a>
+ </div>
+ </div>
+      </nav>
+      <div class="card "   style=" padding: 10px; border-radius: 5px;box-shadow: 0 0 5px rgb(0 0 0 / 35%);" >    
+        <img id="inputImg"  class="imgresponsive" src="" style="border-radius: 10px;"  />
+        <canvas id="overlay"  />       
+    </div>  
     <div class="card "    style=" padding: 20px; border-radius: 5px;">
-      <div class="row">
+      <div class="row" >
         <!-- face_detector_selection_control -->
         <div id="face_detector_selection_control" class="col m12 input-field">
           <select id="selectFaceDetector">
@@ -190,39 +193,43 @@
           </div>
           <div class="col m6 s12 btn-margin" > 
             <button
-              class="waves-effect waves-light btn  blue darken-1"
-              onclick="loadImageFromUrl()"
+            class="waves-effect waves-light  btn blue darken-1"
+            onclick="loadImageFromUrl()"
             >
               Ok
             </button>
             <label class="btn blue darken-1">
               <span for="browse">Choose File</span>
-            <input id="queryImgUploadInput" type="file" style="width: 200px;display: none;" class="waves-effect btn bold" onchange="loadImageFromUpload()" accept=".jpg, .jpeg, .png">
+              <input id="queryImgUploadInput" type="file"class="browse" style="width: 200px;display: none;"  onchange="loadImageFromUpload()" accept=".jpg, .jpeg, .png">
             </label>
+            </div>
             <!-- image_selection_control -->
           </div>
        </div>
 
       <!-- ssd_mobilenetv1_controls -->
-      <span id="ssd_mobilenetv1_controls">
-        <div class="row ">
-          <div class="col m12">
+      <span id="ssd_mobilenetv1_controls" >
+        <div class="row">
+          <div class="col m12 s12">
             <label for="minConfidence">Min Confidence:</label>
             <input disabled value="0.5" id="minConfidence" type="text" class="bold">
           </div>
-          <div class="col m12">
-              <button
-                class="waves-effect waves-light btn blue darken-1"
+          <div class="col m6 s6">
+            <button
+            class="waves-effect waves-light btn small blue darken-1"
                 onclick="onDecreaseMinConfidence()"
               >
                 <i class="material-icons left">-</i>
               </button>
               <button
-                class="waves-effect waves-light btn blue darken-1"
-                onclick="onIncreaseMinConfidence()"
+              class="waves-effect waves-light btn small blue darken-1"
+              onclick="onIncreaseMinConfidence()"
               >
                 <i class="material-icons left">+</i>
               </button>
+            </div>
+            <div class="col m6 s6" >
+                
           </div>
         </div>
       </span>
@@ -231,7 +238,7 @@
       <!-- tiny_face_detector_controls -->
       <span id="tiny_face_detector_controls">
         <div class="row ">
-          <div class="col m12 input-field" style="margin-right: 20px;">
+          <div class="col m6 s6 input-field">
             <select id="inputSize">
               <option value="" disabled selected>Input Size:</option>
               <option value="160">160 x 160</option>
@@ -243,24 +250,27 @@
             </select>
             <label>Input Size</label>
           </div>
-          <div class="col m12">
+          <div class="col m6 s6">
             <label for="scoreThreshold">Score Threshold:</label>
             <input disabled value="0.5" id="scoreThreshold" type="text" class="bold">
           </div>
+      <div class="col m12 s12" >
+
           <button
-            class="waves-effect waves-light btn blue darken-1"
-            onclick="onDecreaseScoreThreshold()"
+          class="waves-effect waves-light btn small blue darken-1"
+          onclick="onDecreaseScoreThreshold()"
           >
             <i class="material-icons left">-</i>
           </button>
           <button
-            class="waves-effect waves-light btn blue darken-1"
-            onclick="onIncreaseScoreThreshold()"
+          class="waves-effect waves-light btn small blue darken-1"
+          onclick="onIncreaseScoreThreshold()"
           >
             <i class="material-icons left">+</i>
           </button>
         </div>
-      </span>
+        </div>
+      </span></div>
       <!-- tiny_face_detector_controls -->
 
     </div>
