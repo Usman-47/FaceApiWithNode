@@ -86,7 +86,7 @@
       </div>
     </nav>
 
-    <div class="row"  ></div>
+    <div class="row"  >
     <!-- ul col starts -->
     <div class="col m3 " >
       <ul id="slide-out" class="side-nav fixed main-side;" style="background-color: white;border-right: 0.5px solid #a7adb0;z-index: 10;width:240px;">
@@ -169,8 +169,8 @@
  </div>
  </nav>
     <div class="card "   style=" padding: 10px; border-radius: 5px;box-shadow: 0 0 5px rgb(0 0 0 / 35%);" >    
-      <img id="inputImg"  class="imgresponsive" src="" style="border-radius: 10px;"  />
-          <canvas id="overlay"  />  
+      <img id="refImg"  class="imgresponsive" src="" style="border-radius: 10px;"  />
+          <canvas id="refImgOverlay" class="overlay"   />  
       <h6 class="blue-text card-heading"> Reference Image </h6>      
       
       <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status" id="loader">
@@ -189,7 +189,7 @@
         
           <label for="refImgUrlInput">Get image from URL:</label>
           <input id="refImgUrlInput" type="text" class="bold">
-        </div>
+        
         <div class="col m6 ">
           <label class="btn blue darken-1">
             <span for="refImgUploadInput">Upload Image</span>
@@ -203,7 +203,8 @@
           </button> 
         </div>          
       </div>       
-        
+      </div>  
+      </div>
         <!-- image_selection_control -->
     <div class="row" >
 
@@ -218,8 +219,8 @@
     <div class="row" style="margin-top: -30px;">
       <div class="col m6 s12">
            <div >
-             <label for="imgUrlInput">Get image from URL:</label>
-             <input id="imgUrlInput" type="text" class="bold">
+             <label for="queryImgUrlInput">Get image from URL:</label>
+             <input id="queryImgUrlInput" type="text" class="bold">
            </div>
             </div>
         <div class="col m6 s12 btn-margin" >
