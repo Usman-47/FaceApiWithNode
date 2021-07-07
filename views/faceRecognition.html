@@ -96,7 +96,7 @@
         <li class="lone">
           <a href="faceMenu.html"><i class="fas fa-home my-icon" ></i><span style="margin-left: 50px;">Home</span></a></li>
           <div class="divider"></div>
-        </li>
+       
         <li class="lone subheader center-align">Menu</li>
         
         <li class="dropchange">
@@ -141,7 +141,7 @@
           <ul class="collapsible">
             <li>
               <div class="collapsible-header head">
-                <p ><i class="fas fa-briefcase my-icon"></i><span class="sidebar-subheading">Webcam filters  </span</p>
+                <p ><i class="fas fa-briefcase my-icon" ></i><span class="sidebar-subheading">Webcam filters  </span></p>
                 </div>
               <div class="collapsible-body">
                 <ul>
@@ -205,18 +205,21 @@
       </div>       
         </div>
         <!-- image_selection_control -->
-      <div class="card" >
-
-      <h6 class="blue-text card-heading"> Query Image: </h6>
-
-      <div style="position: relative" class="margin">
-        <img id="queryImg" src="" style="max-width: 800px;" />
-        <canvas id="queryImgOverlay" class="overlay"/>
-      </div>
-   
-    </div>
-     <div class="row" style="margin-top: 30px;">
-      <div class="col m6 s12">
+       
+          <div class="card" style=" padding: 10px; border-radius: 5px;box-shadow: 0 0 5px rgb(0 0 0 / 35%);" >
+            <img id="queryImg"  class="imgresponsive" src="" style="border-radius: 10px;"  />
+            <canvas id="queryImgOverlay" class="overlay"/> 
+           <h6 class="blue-text card-heading"> Query Image: </h6>
+    
+           <div style="position: relative" class="margin">
+            <img id="queryImg" src="" style="max-width: 800px;" />
+            <canvas id="queryImgOverlay" class="overlay"/>
+            </div>
+       
+          </div>
+        
+    
+    
       
         <div class="card "    style=" padding: 20px; border-radius: 5px;">
           <div class="row" >
@@ -224,7 +227,7 @@
              <label for="queryImgUrlInput">Get image from URL:</label>
              <input id="queryImgUrlInput" type="text" class="bold">
           
-        <div class="col m6 s12 btn-margin" >
+   
 
         <div class="col m6 ">
           <label class="btn blue darken-1">
@@ -244,7 +247,7 @@
        
         <!-- image_selection_control -->
 
-      </div>
+      
 
       <div class="row">
         <!-- face_detector_selection_control -->
@@ -263,7 +266,7 @@
             <div class="col m12 s12">
               <label for="minConfidence">Min Confidence:</label>
               <input disabled value="0.5" id="minConfidence" type="text" class="bold">
-            </div>
+            </div></div>
       <div class="col m6 s6">
 
             <button
