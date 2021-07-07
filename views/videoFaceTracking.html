@@ -56,8 +56,19 @@
     <p class="blinking" ></p>
   </div> 
   <!-- Loader End --> 
-  <div id="navbar">
-  </div>
+  <nav id="navbar" style="position: fixed;z-index: 13;"  >
+
+    <div class="nav-wrapper" >
+      
+      <ul id="nav-mobile" class="right hide-on-med-and-down"  >
+        <li ><a href="sass.html">Home</a></li>
+        <li ><a href="sass.html">Face Filters</a></li>
+        <li><a href="badges.html">Webcam</a></li>
+        <li><a href="collapsible.html">BBT</a></li>
+      </ul>
+      
+    </div>
+  </nav> 
 
   <div class="row"  >
    
@@ -65,8 +76,72 @@
     
     <!-- ul col starts -->
     <div class="col m3 " >
-      <div id="sidebar">
-      </div>
+    <ul id="slide-out" class="side-nav fixed main-side;" style="background-color: white;border-right: 0.5px solid #a7adb0;z-index: 10;width:240px;">
+      <li class="user-li"><div class="user-view">
+        <div class="background">
+        </div>
+      <li class="lone">
+        <a href="faceMenu.html"><i class="fas fa-home my-icon" ></i><span style="margin-left: 50px;">Home</span></a></li>
+        <div class="divider"></div>
+      </li>
+      <li class="lone subheader center-align">Menu</li>
+      
+      <li class="dropchange">
+        <ul class="collapsible" >
+          <li>
+            <div class="collapsible-header head">
+             <p ><i class="fas fa-id-card my-icon"></i><span class="sidebar-subheading">Face Filters</span></p>
+            </div>
+            <div class="collapsible-body drop-body">
+              <ul class="drop-body"  >              
+                <li><a class="waves-effect dropdownMargin" href="faceDetection.html"><span >Face Detection</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="faceLandmarkDetection.html"><span >Face Landmark Detection</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="faceExpressionRecognition.html"><span>Face Expression Recognition</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="faceRecognition.html"><span >Face Recognition</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="faceExtraction.html"><span>Face Extraction</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="videoFaceTracking.html"><span >Video Face Tracking</span></a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="dropchange">
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header head">
+              <p ><i class="fas fa-shopping-basket my-icon"></i><span class="sidebar-subheading">BBT filters</span></p>
+            </div>
+            <div class="collapsible-body">
+              <ul>
+                <li><a class="waves-effect dropdownMargin" href="bbtFaceMatching.html"><span>BBT Face Similarity</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="bbtFaceMatching.html"><span>BBT Face Matching</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="bbtFaceRecognition.html"><span>BBT Face Recognition</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="bbtFaceLandmarkDetection.html"><span>Batch Face Landmark Detection</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="batchFaceRecognition.html"><span>Batch Face Recognition</span></a></li>
+  
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="dropchange">
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header head">
+              <p ><i class="fas fa-briefcase my-icon"></i><span class="sidebar-subheading">Webcam filters  </span</p>
+            </div>
+            <div class="collapsible-body">
+              <ul>
+                <li><a class="waves-effect dropdownMargin" href="webcamFaceDetection.html"><span >Webcam Face Detection</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="webcamFaceLandmarkDetection.html"><span>Webcam Face Landmark Detection</span></a></li>
+                <li><a class="waves-effect dropdownMargin" href="webcamFaceExpressionRecognition.html"><span>Webcam Face Expression Recognition</span></a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      
+      </ul> 
     </div>
     <!-- ul col ends -->
     <!-- cards col starts -->
@@ -81,46 +156,18 @@
         </div>
       </nav>
              
-      
-  <div class="card "    style=" padding: 20px; border-radius: 5px;">
+      <div class=" margin "   style="position: relative;margin-left: -30px;">    
+        <video src="bbt.mp4" id="inputVideo" autoplay muted loop playsinline   style="border-radius: 10px;"></video>
+        <canvas id="overlay"  />       
+      </div>
+
+  <div class="card"    style=" padding: 20px; border-radius: 5px;">
   <div class="row" >
         <div class="col m12 s12">
-          <div class="card "   style=" padding: 10px; border-radius: 5px;" >    
-    <video src="bbt.mp4" id="inputVideo" autoplay muted loop playsinline  class="imgresponsive" style="border-radius: 10px;"></video>
-    <canvas id="overlay"  />   
-        <!-- image_selection_control -->
-            <label>Select Image</label>
-            <div id="selectList"></div>
-        </div>
+         
        
-  </div>
-      
-</div>
-  <div class="row" style="margin-top: -30px;">
-     <div class="col m6 s12">
-          <div >
-            <label for="imgUrlInput">Get image from URL:</label>
-            <input id="imgUrlInput" type="text" class="bold">
-          </div>
-      </div>
-        <div class="col m6 s12 btn-margin" >
-          
-            <button
-              class="waves-effect waves-light  btn blue darken-1"
-              onclick="loadImageFromUrl()"
-            >
-              Ok
-            </button>
-            <label class="btn blue darken-1">
-              <span for="browse">Choose File</span>
-              <input id="queryImgUploadInput" type="file"class="browse" style="width: 200px;display: none;"  onchange="loadImageFromUpload()" accept=".jpg, .jpeg, .png">
-            </label> 
-        </div>
-
-    
-
-    <div class="row side-by-side">
-      <div class="row">
+ 
+        <div class="row">
       <!-- face_detector_selection_control -->
       <div id="face_detector_selection_control" class="input-field col m12 s12" >
         <select id="selectFaceDetector">
@@ -132,26 +179,26 @@
       <!-- face_detector_selection_control -->
 
       <!-- check boxes -->
-      <!-- <div class="row" style="width: 220px;">
+      <div class="row" style="width: 220px;">
         <input type="checkbox" id="withFaceLandmarksCheckbox" onchange="onChangeWithFaceLandmarks(event)" />
         <label for="withFaceLandmarksCheckbox">Detect Face Landmarks</label>
         <input type="checkbox" id="hideBoundingBoxesCheckbox" onchange="onChangeHideBoundingBoxes(event)" />
         <label for="hideBoundingBoxesCheckbox">Hide Bounding Boxes</label>
-      </div> -->
+      </div>
       <!-- check boxes -->
 
       <!-- fps_meter -->
-      <!-- <div id="fps_meter" class="row side-by-side">
+      <div id="fps_meter" class="row side-by-side">
         <div>
           <label for="time">Time:</label>
           <input disabled value="-" id="time" type="text" class="bold">
           <label for="fps">Estimated Fps:</label>
           <input disabled value="-" id="fps" type="text" class="bold">
         </div>
-      </div> -->
+      </div>
       <!-- fps_meter -->
 
-    <!-- </div> -->
+    </div>
 
     <!-- ssd_mobilenetv1_controls -->
     <span id="ssd_mobilenetv1_controls" >
@@ -201,7 +248,7 @@
         <div class="col m6 s6">
           <label for="scoreThreshold">Score Threshold:</label>
           <input disabled value="0.5" id="scoreThreshold" type="text" class="bold">
-        </div>
+        
       <div class="col m12 s12" >
         <button
         class="waves-effect waves-light btn small blue darken-1"
@@ -291,8 +338,6 @@
 
     $(document).ready(function() {
       // renderNavBar('#navbar', 'video_face_tracking')
-      $("#navbar").load("nav.html");
-      $("#sidebar").load("sidebar.html");
       initFaceDetectionControls()
       run()
     })
