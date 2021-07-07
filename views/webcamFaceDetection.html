@@ -157,7 +157,8 @@
     function updateResults() {}
 
     $(document).ready(function() {
-      renderNavBar('#navbar', 'webcam_face_detection')
+      $("#navbar").load("nav.html");
+      $("#sidebar").load("sidebar.html");
       initFaceDetectionControls()
       run()
     })

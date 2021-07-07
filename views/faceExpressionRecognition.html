@@ -69,88 +69,13 @@
       <p class="blinking" ></p>
     </div> 
   <!-- Loader End --> 
-  <nav style="position: fixed;z-index: 13;"  >
-  
-      <div class="nav-wrapper" >
-        
-        <ul id="nav-mobile" class="right hide-on-med-and-down"  >
-          <li ><a href="sass.html">Home</a></li>
-          <li ><a href="sass.html">Face Filters</a></li>
-          <li><a href="badges.html">Webcam</a></li>
-          <li><a href="collapsible.html">BBT</a></li>
-        </ul>
-        <!-- <a href="#" data-activates="slide-out" class="right button-collapse "><img src="menu_icon.png" width="60px" /></a> -->
-      </div>
-    </nav> 
+  <div id="navbar">
+  </div>
     <div class="row"  >
     <!-- ul col starts -->
     <div class="col m3 " >
-      <ul id="slide-out" class="side-nav fixed main-side;" style="background-color: white;border-right: 0.5px solid #a7adb0;z-index: 10;width:240px;">
-       <li class="user-li"><div class="user-view">
-        <div class="background">
-        </div>
-      <li class="lone">
-        <a href="faceMenu.html"><i class="fas fa-home my-icon" ></i><span style="margin-left: 50px;">Home</span></a></li>
-        <div class="divider"></div>
-      </li>
-      <li class="lone subheader center-align">Menu</li>
-      
-      <li class="dropchange">
-        <ul class="collapsible" >
-          <li>
-            <div class="collapsible-header head">
-              <p ><i class="fas fa-id-card my-icon"></i><span class="sidebar-subheading">Face Filters</span></p>
-            </div>
-            <div class="collapsible-body drop-body">
-              <ul class="drop-body"  >              
-                <li><a class="waves-effect dropdownMargin" href="faceDetection.html"><span >Face Detection</span></a></li>
-                <li><a class="waves-effect dropdownMargin" href="faceLandmarkDetection.html"><span >Face Landmark Detection</span></a></li>
-                <li><a class="waves-effect dropdownMargin" href="faceExpressionRecognition.html"><span>Face Expression Recognition</span></a></li>
-                <li><a class="waves-effect dropdownMargin" href="faceRecognition.html"><span >Face Recognition</span></a></li>
-                <li><a class="waves-effect dropdownMargin" href="faceExtraction.html"><span>Face Extraction</span></a></li>
-                <li><a class="waves-effect dropdownMargin" href="videoFaceTracking.html"><span >Video Face Tracking</span></a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
-      <li class="dropchange">
-        <ul class="collapsible">
-          <li>
-            <div class="collapsible-header head">
-              <p ><i class="fas fa-shopping-basket my-icon"></i><span class="sidebar-subheading">BBT filters</span></p>
-            </div>
-            <div class="collapsible-body">
-              <ul>
-                <li><a class="waves-effect dropdownMargin" href="bbtFaceMatching.html"><span>BBT Face Similarity</span></a></li>
-                <li><a class="waves-effect dropdownMargin" href="bbtFaceMatching.html"><span>BBT Face Matching</span></a></li>
-                <li><a class="waves-effect dropdownMargin" href="bbtFaceRecognition.html"><span>BBT Face Recognition</span></a></li>
-                <li><a class="waves-effect dropdownMargin" href="bbtFaceLandmarkDetection.html"><span>Batch Face Landmark Detection</span></a></li>
-                <li><a class="waves-effect dropdownMargin" href="batchFaceRecognition.html"><span>Batch Face Recognition</span></a></li>
-  
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
-      <li class="dropchange">
-        <ul class="collapsible">
-          <li>
-            <div class="collapsible-header head">
-              <p ><i class="fas fa-briefcase my-icon"></i><span class="sidebar-subheading">Webcam filters  </span</p>
-              </div>
-            <div class="collapsible-body">
-              <ul>
-                <li><a class="waves-effect dropdownMargin" href="webcamFaceDetection.html"><span >Webcam Face Detection</span></a></li>
-                <li><a class="waves-effect dropdownMargin" href="webcamFaceLandmarkDetection.html"><span>Webcam Face Landmark Detection</span></a></li>
-                <li><a class="waves-effect dropdownMargin" href="webcamFaceExpressionRecognition.html"><span>Webcam Face Expression Recognition</span></a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
-      
-      </ul> 
+      <div id="sidebar">
+      </div> 
     </div>
     <!-- ul col ends -->    
   
@@ -329,6 +254,9 @@
 
     $(document).ready(function() {
       // renderNavBar('#navbar', 'face_expression_recognition')
+      $("#navbar").load("nav.html");
+      $("#sidebar").load("sidebar.html");
+
       initImageSelectionControls('happy.jpg', true)
       initFaceDetectionControls()
       run()
