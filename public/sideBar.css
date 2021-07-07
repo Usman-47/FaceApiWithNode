@@ -1,45 +1,45 @@
+#dropdown1,
+#dropdown2 {
+  margin-top: 64px;
+}
 
-  
-  #dropdown1, #dropdown2{
-    margin-top:64px;
-  }
-  
-  .dropdown-content li > a{
-    color:#1E88E5 !important;
-  }
-  
-  .side-nav li.active{
-    background-color:#1E88E5 !important;
-    color: white;
-  }
-  
-  .side-nav li.user-li.active{
-    background-color:#ac3973 !important;
-  }
-  
-   .side-nav li.active.lone a,.side-nav li.active ul li:first-child, .side-nav li.active.lone a svg, .side-nav li.active ul li div.collapsible-header p svg{
-    color:#FFFFFF !important;
-  }
-  
-  
-  .dropdownMargin>span{
-    margin-left: 50px;
-  }
-  .side-nav{
-    width: 20px;
-  }
+.dropdown-content li > a {
+  color: #1e88e5 !important;
+}
 
-  .sidebar-subheading{
-   padding-left: 30px;
-   /* color: #525050; */
-   
-  }
+.side-nav li.active {
+  background-color: #1e88e5 !important;
+  color: white;
+}
 
+.side-nav li.user-li.active {
+  background-color: #ac3973 !important;
+  margin-top: 200px;
+}
 
- .head >p{
-  margin:0px;
-  padding-left:16px;
- }
- .dropdownMargin>span{
-   padding-left: 14px;
- }
+.side-nav li.active.lone a,
+.side-nav li.active ul li:first-child,
+.side-nav li.active.lone a svg,
+.side-nav li.active ul li div.collapsible-header p svg {
+  color: #ffffff !important;
+}
+
+.dropdownMargin > span {
+  margin-left: 50px;
+}
+.side-nav {
+  width: 20px;
+}
+
+.sidebar-subheading {
+  padding-left: 30px;
+  /* color: #525050; */
+}
+
+.head > p {
+  margin: 0px;
+  padding-left: 16px;
+}
+.dropdownMargin > span {
+  padding-left: 14px;
+}

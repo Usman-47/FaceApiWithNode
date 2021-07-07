@@ -1,129 +1,304 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script src="face-api.js"></script>
-  <script src="js/commons.js"></script>
-  <script src="js/bbt.js"></script>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-</head>
-<body>
-  <div id="navbar"></div>
-  <div class="center-content page-container">
-    <div>
-      <div class="progress" id="loader">
-        <div class="indeterminate"></div>
-      </div>
-      <div class="row side-by-side">
-        <div class="row">
-          <label for="timeNoBatch">Time for processing each face seperately:</label>
-          <input disabled value="-" id="timeNoBatch" type="text" class="bold"/>
+  <head>
+    <script src="face-api.js"></script>
+    <script src="js/commons.js"></script>
+    <script src="js/bbt.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="sideBar.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.1.1.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <!-- Loader -->
+    <!-- <div class="preloader-background" id="loader">
+      <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
-        <div class="row">
-          <label for="timeBatch">Time for processing in Batch:</label>
-          <input disabled value="-" id="timeBatch" type="text" class="bold"/>
+
+        <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-yellow">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-green">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div>
+          <div class="gap-patch">
+            <div class="circle"></div>
+          </div>
+          <div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
         </div>
       </div>
-      <div class="row side-by-side">
-        <div>
-          <label for="numImages">Num Images:</label>
-          <input id="numImages" type="text" class="bold" value="16"/>
-        </div>
-        <button
-          class="waves-effect waves-light btn"
-          onclick="measureTimingsAndDisplay()"
-        >
-          Ok
-        </button>
+      <p class="blinking"></p>
+    </div> -->
+    <!-- Loader End -->
+    <nav style="position: fixed; z-index: 13">
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Home</a></li>
+          <li><a href="sass.html">Face Filters</a></li>
+          <li><a href="badges.html">Webcam</a></li>
+          <li><a href="collapsible.html">BBT</a></li>
+        </ul>
       </div>
-      <div class="row side-by-side">
-        <div class="center-content">
-          <div id="faceContainer"></div>
+    </nav>
+
+    <div class="row">       
+      <!-- ul col starts -->
+      <div class="col m3 " >
+      <ul id="slide-out" class="side-nav fixed main-side;" style="background-color: white;border-right: 0.5px solid #a7adb0;z-index: 10;width:240px;">
+        <li class="user-li"><div class="user-view">
+          <div class="background">
+          </div>
+        <li class="lone">
+          <a href="faceMenu.html"><i class="fas fa-home my-icon" ></i><span style="margin-left: 50px;">Home</span></a></li>
+          <div class="divider"></div>
+        </li>
+        <li class="lone subheader center-align">Menu</li>
+        
+        <li class="dropchange">
+          <ul class="collapsible" >
+            <li>
+              <div class="collapsible-header head">
+               <p ><i class="fas fa-id-card my-icon"></i><span class="sidebar-subheading">Face Filters</span></p>
+              </div>
+              <div class="collapsible-body drop-body">
+                <ul class="drop-body"  >              
+                  <li><a class="waves-effect dropdownMargin" href="faceDetection.html"><span >Face Detection</span></a></li>
+                  <li><a class="waves-effect dropdownMargin" href="faceLandmarkDetection.html"><span >Face Landmark Detection</span></a></li>
+                  <li><a class="waves-effect dropdownMargin" href="faceExpressionRecognition.html"><span>Face Expression Recognition</span></a></li>
+                  <li><a class="waves-effect dropdownMargin" href="faceRecognition.html"><span >Face Recognition</span></a></li>
+                  <li><a class="waves-effect dropdownMargin" href="faceExtraction.html"><span>Face Extraction</span></a></li>
+                  <li><a class="waves-effect dropdownMargin" href="videoFaceTracking.html"><span >Video Face Tracking</span></a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="dropchange">
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header head">
+                <p ><i class="fas fa-shopping-basket my-icon"></i><span class="sidebar-subheading">BBT filters</span></p>
+              </div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a class="waves-effect dropdownMargin" href="bbtFaceMatching.html"><span>BBT Face Similarity</span></a></li>
+                  <li><a class="waves-effect dropdownMargin" href="bbtFaceMatching.html"><span>BBT Face Matching</span></a></li>
+                  <li><a class="waves-effect dropdownMargin" href="bbtFaceRecognition.html"><span>BBT Face Recognition</span></a></li>
+                  <li><a class="waves-effect dropdownMargin" href="bbtFaceLandmarkDetection.html"><span>Batch Face Landmark Detection</span></a></li>
+                  <li><a class="waves-effect dropdownMargin" href="batchFaceRecognition.html"><span>Batch Face Recognition</span></a></li>
+    
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="dropchange">
+          <ul class="collapsible">
+            <li>
+              <div class="collapsible-header head">
+                <p ><i class="fas fa-briefcase my-icon"></i><span class="sidebar-subheading">Webcam filters  </span</p>
+              </div>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a class="waves-effect dropdownMargin" href="webcamFaceDetection.html"><span >Webcam Face Detection</span></a></li>
+                  <li><a class="waves-effect dropdownMargin" href="webcamFaceLandmarkDetection.html"><span>Webcam Face Landmark Detection</span></a></li>
+                  <li><a class="waves-effect dropdownMargin" href="webcamFaceExpressionRecognition.html"><span>Webcam Face Expression Recognition</span></a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+        
+        </ul> 
+      </div>
+      <!-- ul col ends -->
+
+      <!-- cards col starts -->
+     
+      <div  class="col m7 s11 " style="margin-top:100px">
+        
+        <nav >
+          <div class="nav-wrapper" style="margin-right: 100px;">
+            <div class="col s12">
+              <a href="#!" >Face Filter ></a>
+              <a href="#!" >Face Detection </a>
+            </div>
+          </div>
+        </nav>
+        
+        
+          <div class="card"   style=" padding: 20px; border-radius: 5px;">
+            <div class="row">
+              <label for="timeNoBatch"
+                >Time for processing each face seperately:</label
+              >
+              <input
+                disabled
+                value="-"
+                id="timeNoBatch"
+                type="text"
+                class="bold"
+              />
+            </div>
+            <div class="row">
+              <label for="timeBatch">Time for processing in Batch:</label>
+              <input
+                disabled
+                value="-"
+                id="timeBatch"
+                type="text"
+                class="bold"
+              />
+            </div>
+         
+          <div class="row ">
+            <div>
+              <label for="numImages">Num Images:</label>
+              <input id="numImages" type="text" class="bold" value="16" />
+            </div>
+            <button
+              class="waves-effect waves-light btn small blue darken-1"
+              onclick="measureTimingsAndDisplay()"
+            >
+              Ok
+            </button>
+          </div>
+          <div class="row ">
+            <div class="center-content">
+              <div id="faceContainer"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <script>
+      let images = [];
+      let faceMatcher = null;
+      let numImages = 16;
+      let maxDistance = 0.6;
 
-  <script>
-    let images = []
-    let faceMatcher = null
-    let numImages = 16
-    let maxDistance = 0.6
+      function onNumImagesChanged(e) {
+        const val = parseInt(e.target.value) || 16;
+        numImages = Math.min(Math.max(val, 0), 32);
+        e.target.value = numImages;
+      }
 
-    function onNumImagesChanged(e) {
-      const val = parseInt(e.target.value) || 16
-      numImages = Math.min(Math.max(val, 0), 32)
-      e.target.value = numImages
-    }
+      function displayTimeStats(timeNoBatch, timeBatch) {
+        $("#timeNoBatch").val(`${timeNoBatch} ms`);
+        $("#timeBatch").val(`${timeBatch} ms`);
+      }
 
-    function displayTimeStats(timeNoBatch, timeBatch) {
-      $('#timeNoBatch').val(`${timeNoBatch} ms`)
-      $('#timeBatch').val(`${timeBatch} ms`)
-    }
+      function drawFaceRecognitionCanvas(img, descriptor) {
+        const canvas = faceapi.createCanvasFromMedia(img);
+        $("#faceContainer").append(canvas);
 
-    function drawFaceRecognitionCanvas(img, descriptor) {
-      const canvas = faceapi.createCanvasFromMedia(img)
-      $('#faceContainer').append(canvas)
+        const x = 20,
+          y = canvas.height - 20;
+        const ctx = faceapi.getContext2dOrThrow(canvas);
+        ctx.font = "16px Georgia";
+        ctx.fillStyle = "red";
+        ctx.fillText(faceMatcher.findBestMatch(descriptor).toString(), x, y);
+      }
 
-      const x = 20, y = canvas.height - 20
-      const ctx = faceapi.getContext2dOrThrow(canvas)
-      ctx.font = '16px Georgia'
-      ctx.fillStyle = 'red'
-      ctx.fillText(faceMatcher.findBestMatch(descriptor).toString(), x, y)
-    }
+      async function runComputeFaceDescriptors(useBatchInput) {
+        const ts = Date.now();
+        descriptorsByFace = useBatchInput
+          ? await faceapi.computeFaceDescriptor(images.slice(0, numImages))
+          : await Promise.all(
+              images
+                .slice(0, numImages)
+                .map((img) => faceapi.computeFaceDescriptor(img))
+            );
+        const time = Date.now() - ts;
+        return time;
+      }
 
-    async function runComputeFaceDescriptors(useBatchInput) {
-      const ts = Date.now()
-      descriptorsByFace = useBatchInput
-        ? await faceapi.computeFaceDescriptor(images.slice(0, numImages))
-        : await Promise.all(images.slice(0, numImages).map(img => faceapi.computeFaceDescriptor(img)))
-      const time = Date.now() - ts
-      return time
-    }
+      async function measureTimings() {
+        const timeNoBatch = await runComputeFaceDescriptors(false);
+        const timeBatch = await runComputeFaceDescriptors(true);
+        return { timeNoBatch, timeBatch };
+      }
 
-    async function measureTimings() {
-      const timeNoBatch = await runComputeFaceDescriptors(false)
-      const timeBatch = await runComputeFaceDescriptors(true)
-      return { timeNoBatch, timeBatch }
-    }
+      async function measureTimingsAndDisplay() {
+        const { timeNoBatch, timeBatch } = await measureTimings();
+        displayTimeStats(timeNoBatch, timeBatch);
 
-    async function measureTimingsAndDisplay() {
-      const { timeNoBatch, timeBatch } = await measureTimings()
-      displayTimeStats(timeNoBatch, timeBatch)
+        $("#faceContainer").empty();
+        descriptorsByFace.forEach((descriptor, i) =>
+          drawFaceRecognitionCanvas(images[i], descriptor)
+        );
+      }
 
-      $('#faceContainer').empty()
-      descriptorsByFace.forEach((descriptor, i) => drawFaceRecognitionCanvas(images[i], descriptor))
-    }
+      async function run() {
+        await faceapi.loadFaceRecognitionModel("/");
+        faceMatcher = await createBbtFaceMatcher(1);
+        $("#loader").hide();
 
-    async function run() {
-      await faceapi.loadFaceRecognitionModel('/')
-      faceMatcher = await createBbtFaceMatcher(1)
-      $('#loader').hide()
+        const imgUris = classes
+          // skip images with idx 1, as they are used as reference data
+          .map((clazz) =>
+            Array.from(Array(4), (_, idx) => getFaceImageUri(clazz, idx + 2))
+          )
+          .reduce((flat, arr) => flat.concat(arr));
 
-      const imgUris = classes
-        // skip images with idx 1, as they are used as reference data
-        .map(clazz => Array.from(Array(4), (_, idx) => getFaceImageUri(clazz, idx + 2)))
-        .reduce((flat, arr) => flat.concat(arr))
+        images = await Promise.all(
+          imgUris.map(async (uri) => faceapi.fetchImage(uri))
+        );
 
-      images = await Promise.all(imgUris.map(
-        async uri => faceapi.fetchImage(uri)
-      ))
+        // warmup
+        await measureTimings();
+        // run
+        measureTimingsAndDisplay();
+      }
 
-      // warmup
-      await measureTimings()
-      // run
-      measureTimingsAndDisplay()
-    }
-
-    $(document).ready(function() {
-      $('#numImages').on('change', onNumImagesChanged)
-      renderNavBar('#navbar', 'batch_face_recognition')
-      run()
-    })
-
-  </script>
-
-</body>
+      $(document).ready(function () {
+        $("#numImages").on("change", onNumImagesChanged);
+        renderNavBar("#navbar", "batch_face_recognition");
+        run();
+      });
+    </script>
+  </body>
 </html>

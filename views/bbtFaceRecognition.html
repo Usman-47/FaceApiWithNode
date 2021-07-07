@@ -7,80 +7,145 @@
   <script src="js/imageSelectionControls.js"></script>
   <script src="js/bbt.js"></script>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="sideBar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
 </head>
 <body>
-  <div id="navbar"></div>
-  <div class="center-content page-container">
+  
+  <!-- Loader -->
+ 
+  <div id="navbar">
+  </div>
+  <!-- Loader End --> 
+  <nav style="position: fixed;z-index: 13;"  >
 
-    <div class="progress" id="loader">
-      <div class="indeterminate"></div>
+    <div class="nav-wrapper" >
+      
+      <ul id="nav-mobile" class="right hide-on-med-and-down"  >
+        <li ><a href="sass.html">Home</a></li>
+        <li ><a href="sass.html">Face Filters</a></li>
+        <li><a href="badges.html">Webcam</a></li>
+        <li><a href="collapsible.html">BBT</a></li>
+      </ul>
+      
     </div>
-    <div style="position: relative" class="margin">
-      <img id="inputImg" src="" style="max-width: 800px;" />
-      <canvas id="overlay" />
+  </nav> 
+
+  <div class="row"  >
+    
+     
+    
+    <!-- ul col starts -->
+    <div class="col m3 " >
+      <div id="sidebar">
+      </div>
+    </div>
+    <!-- ul col ends -->
+    <!-- cards col starts -->
+    <div class="col m7 s11" style="margin-top:80px">
+    
+      <nav >
+        <div class="nav-wrapper" style="margin-right: 100px;">
+          <div class="col s12">
+            <a href="#!" class="breadcrumb">Face Filter ></a>
+            <a href="#!" >Face Detection </a>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="card "   style=" padding: 10px; border-radius: 5px;box-shadow: 0 0 5px rgb(0 0 0 / 35%);" >    
+        <img id="inputImg" class="imgresponsive" src="" style="border-radius: 10px;"  />
+        <canvas id="overlay" />
     </div>
 
-    <div class="row side-by-side">
+    <div class="card "    style=" padding: 20px; border-radius: 5px;">
+    <div class="row">
 
       <!-- face_detector_selection_control -->
-      <div id="face_detector_selection_control" class="row input-field" style="margin-right: 20px;">
-        <select id="selectFaceDetector">
-          <option value="ssd_mobilenetv1">SSD Mobilenet V1</option>
-          <option value="tiny_face_detector">Tiny Face Detector</option>
-        </select>
-        <label>Select Face Detector</label>
+      <div class="row" >
+        <div class="col m12 s12">
+          <div id="face_detector_selection_control" class="input-field" >
+          <select id="selectFaceDetector">
+            <option value="ssd_mobilenetv1">SSD Mobilenet V1</option>
+            <option value="tiny_face_detector">Tiny Face Detector</option>
+          </select>
+          <label>Select Face Detector</label>
+           </div>
+        </div>
       </div>
+
       <!-- face_detector_selection_control -->
 
       <!-- image_selection_control -->
       <div id="image_selection_control"></div>
-        <div id="selectList"></div>
-        <div class="row">
-          <label for="imgUrlInput">Get image from URL:</label>
-          <input id="imgUrlInput" type="text" class="bold">
+      <div class="row" >
+        <div class="col m12 s12">
+        <!-- image_selection_control -->
+            <label>Select Image</label>
+            <div id="selectList"></div>
         </div>
-        <button
-          class="waves-effect waves-light btn"
-          onclick="loadImageFromUrl()"
-        >
-          Ok
-        </button>
-        <input id="queryImgUploadInput" type="file" class="waves-effect btn bold" onchange="loadImageFromUpload()" accept=".jpg, .jpeg, .png">
-      <div id="image_selection_control"></div>
+        <div class="row">
+          <div class="col m12 s12">
+           <label for="imgUrlInput">Get image from URL:</label>
+            <input id="imgUrlInput" type="text" class="bold">
+          </div>
+        </div>
+        <div class="col m6 s12 btn-margin" >
+          <button
+            class="waves-effect waves-light  btn blue darken-1"
+            onclick="loadImageFromUrl()"
+          >
+            Ok
+          </button>
+          <label class="btn blue darken-1">
+            <span for="browse">Choose File</span>
+          <input id="queryImgUploadInput" type="file" class="browse" style="width: 200px;display: none;" onchange="loadImageFromUpload()" accept=".jpg, .jpeg, .png">
+        </div>
+
+      
+        <div id="image_selection_control"></div>
       <!-- image_selection_control -->
 
     </div>
 
     <!-- ssd_mobilenetv1_controls -->
     <span id="ssd_mobilenetv1_controls">
-      <div class="row side-by-side">
-        <div class="row">
+      <div class="row ">
+        <div class="col m12 s12">
           <label for="minConfidence">Min Confidence:</label>
           <input disabled value="0.5" id="minConfidence" type="text" class="bold">
         </div>
+        <div class="col m6 s6">
         <button
-          class="waves-effect waves-light btn"
+          class="waves-effect waves-light btn small blue darken-1"
           onclick="onDecreaseMinConfidence()"
         >
-          <i class="material-icons left">-</i>
+          <p class="material-icons left">-</p>
         </button>
         <button
-          class="waves-effect waves-light btn"
+          class="waves-effect waves-light btn small blue darken-1"
           onclick="onIncreaseMinConfidence()"
         >
-          <i class="material-icons left">+</i>
+          <p class="material-icons left">+</p>
         </button>
+      </div>
+      <div class="col m6 s6" >
+          
+        
+       </div>
       </div>
     </span>
     <!-- ssd_mobilenetv1_controls -->
 
     <!-- tiny_face_detector_controls -->
     <span id="tiny_face_detector_controls">
-      <div class="row side-by-side">
-        <div class="row input-field" style="margin-right: 20px;">
+      <div class="row ">
+        <div class="col m6 s6 input-field" >
           <select id="inputSize">
             <option value="" disabled selected>Input Size:</option>
             <option value="160">160 x 160</option>
@@ -92,25 +157,34 @@
           </select>
           <label>Input Size</label>
         </div>
-        <div class="row">
+        <div class="col m6 s6">
           <label for="scoreThreshold">Score Threshold:</label>
           <input disabled value="0.5" id="scoreThreshold" type="text" class="bold">
         </div>
-        <button
-          class="waves-effect waves-light btn"
-          onclick="onDecreaseScoreThreshold()"
-        >
-          <i class="material-icons left">-</i>
-        </button>
-        <button
-          class="waves-effect waves-light btn"
-          onclick="onIncreaseScoreThreshold()"
-        >
-          <i class="material-icons left">+</i>
-        </button>
+        <div class="col m12 s12" >
+            <button
+              class="waves-effect waves-light btn"
+              onclick="onDecreaseScoreThreshold()"
+            >
+              <i class="material-icons left">-</i>
+            </button>
+            <button
+              class="waves-effect waves-light btn"
+              onclick="onIncreaseScoreThreshold()"
+            >
+              <i class="material-icons left">+</i>
+            </button>
+        </div>
       </div>
     </span>
     <!-- tiny_face_detector_controls -->
+    </div>
+
+  </div>
+
+  
+
+  
 
   </body>
 
@@ -164,7 +238,9 @@
     }
 
     $(document).ready(function() {
-      renderNavBar('#navbar', 'bbt_face_recognition')
+      $("#navbar").load("nav.html");
+      $("#sidebar").load("sidebar.html");
+
       initImageSelectionControls()
       initFaceDetectionControls()
       run()
