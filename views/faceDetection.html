@@ -15,15 +15,7 @@
  
 <body>
   
-   <!-- <div id="navbar"></div> -->
-      
-    <!-- <div class="progress" id="loader">
-      <div class="indeterminate"></div>
-    </div>  -->
-
-
-
-  <!-- Loader -->
+  
  <div class="preloader-background"  id="loader"> 
   <div class="preloader-wrapper big active">
         <div class="spinner-layer spinner-blue">
@@ -68,20 +60,7 @@
       </div>
     <p class="blinking" ></p>
   </div> 
-  <!-- Loader End --> 
-  <!-- <nav style="position: fixed;z-index: 13;"  >
-
-    <div class="nav-wrapper" >
-      
-      <ul id="nav-mobile" class="right hide-on-med-and-down"  >
-        <li ><a href="sass.html">Home</a></li>
-        <li ><a href="sass.html">Face Filters</a></li>
-        <li><a href="badges.html">Webcam</a></li>
-        <li><a href="collapsible.html">BBT</a></li>
-      </ul>
-      
-    </div>
-  </nav>  -->
+ 
   <div id="navbar">
   </div>
   
@@ -251,10 +230,17 @@
 
   <script>
     // menu collpase button code
-     $( document ).ready(function(){
-        $(".button-collapse").sideNav();
-      });
+    //  $( document ).ready(function(){
+    //     $(".button-collapse").sideNav();
+    //   });
       // end here
+
+    //   document.addEventListener('DOMContentLoaded', function() {
+    //   var elems = document.querySelectorAll('.collapsible');
+    //   var instances = M.Collapsible.init(elems, options);
+    // });
+
+
 
     async function updateResults() {
       if (!isFaceDetectionModelLoaded()) {

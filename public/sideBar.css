@@ -22,10 +22,11 @@
 .side-nav li.active.lone a svg,
 .side-nav li.active ul li div.collapsible-header p svg {
   color: #ffffff !important;
+  margin: 0;
 }
 
 .dropdownMargin > span {
-  margin-left: 50px;
+  margin-left: 5px;
 }
 .side-nav {
   width: 20px;

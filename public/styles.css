@@ -220,6 +220,18 @@ input[type="file"]::-webkit-file-upload-button {
 }
 @media (min-width: 1366px) and (max-width: 2500px) {
 }
-.navbutton > li:hover {
-  background-color: #1c81d9;
+nav.nav-center ul {
+  text-align: center;
+}
+nav.nav-center ul li {
+  display: inline;
+  float: none;
+  margin-right: 10px;
+}
+nav.nav-center ul li :hover {
+  border-bottom: 2px solid #0098ff;
+  background-color: white;
+}
+nav.nav-center ul li a {
+  display: inline-block;
 }
