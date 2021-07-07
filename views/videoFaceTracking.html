@@ -56,7 +56,7 @@
     <p class="blinking" ></p>
   </div> 
   <!-- Loader End --> 
-  <nav style="position: fixed;z-index: 13;"  >
+  <nav id="navbar" style="position: fixed;z-index: 13;"  >
 
     <div class="nav-wrapper" >
       
@@ -156,46 +156,18 @@
         </div>
       </nav>
              
-      
-  <div class="card "    style=" padding: 20px; border-radius: 5px;">
+      <div class=" margin "   style="position: relative">    
+        <video src="bbt.mp4" id="inputVideo" autoplay muted loop playsinline   style="border-radius: 10px;"></video>
+        <canvas id="overlay"  />       
+      </div>
+
+  <div class="card"    style=" padding: 20px; border-radius: 5px;">
   <div class="row" >
         <div class="col m12 s12">
-          <div class="card "   style=" padding: 10px; border-radius: 5px;" >    
-    <video src="bbt.mp4" id="inputVideo" autoplay muted loop playsinline  class="imgresponsive" style="border-radius: 10px;"></video>
-    <canvas id="overlay"  />   
-        <!-- image_selection_control -->
-            <label>Select Image</label>
-            <div id="selectList"></div>
-        </div>
+         
        
-  </div>
-      
-</div>
-  <div class="row" style="margin-top: -30px;">
-     <div class="col m6 s12">
-          <div >
-            <label for="imgUrlInput">Get image from URL:</label>
-            <input id="imgUrlInput" type="text" class="bold">
-          </div>
-      </div>
-        <div class="col m6 s12 btn-margin" >
-          
-            <button
-              class="waves-effect waves-light  btn blue darken-1"
-              onclick="loadImageFromUrl()"
-            >
-              Ok
-            </button>
-            <label class="btn blue darken-1">
-              <span for="browse">Choose File</span>
-              <input id="queryImgUploadInput" type="file"class="browse" style="width: 200px;display: none;"  onchange="loadImageFromUpload()" accept=".jpg, .jpeg, .png">
-            </label> 
-        </div>
-
-    
-
-    <div class="row side-by-side">
-      <div class="row">
+ 
+        <div class="row">
       <!-- face_detector_selection_control -->
       <div id="face_detector_selection_control" class="input-field col m12 s12" >
         <select id="selectFaceDetector">
@@ -207,26 +179,26 @@
       <!-- face_detector_selection_control -->
 
       <!-- check boxes -->
-      <!-- <div class="row" style="width: 220px;">
+      <div class="row" style="width: 220px;">
         <input type="checkbox" id="withFaceLandmarksCheckbox" onchange="onChangeWithFaceLandmarks(event)" />
         <label for="withFaceLandmarksCheckbox">Detect Face Landmarks</label>
         <input type="checkbox" id="hideBoundingBoxesCheckbox" onchange="onChangeHideBoundingBoxes(event)" />
         <label for="hideBoundingBoxesCheckbox">Hide Bounding Boxes</label>
-      </div> -->
+      </div>
       <!-- check boxes -->
 
       <!-- fps_meter -->
-      <!-- <div id="fps_meter" class="row side-by-side">
+      <div id="fps_meter" class="row side-by-side">
         <div>
           <label for="time">Time:</label>
           <input disabled value="-" id="time" type="text" class="bold">
           <label for="fps">Estimated Fps:</label>
           <input disabled value="-" id="fps" type="text" class="bold">
         </div>
-      </div> -->
+      </div>
       <!-- fps_meter -->
 
-    <!-- </div> -->
+    </div>
 
     <!-- ssd_mobilenetv1_controls -->
     <span id="ssd_mobilenetv1_controls" >
